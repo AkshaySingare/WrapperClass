@@ -1,0 +1,438 @@
+//Convert a primitive int value to an Integer object and then convert it back to a primitive. Print all values.
+
+import java.util.*;
+
+public class demo {
+    public static void main(String[] args) {
+        int a=10;
+        Integer b =a;
+        int c = b.intValue();
+        System.out.println(b.getClass().getName());
+        System.out.println(c);
+    }
+}
+// Take a String input from the user (like "123"), convert it into an int using
+// a wrapper class method, and add 10 to it. Print the result.
+
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number Value ");
+        String str = sc.nextLine();
+        int a = Integer.parseInt(str);
+        System.out.println(a+10);
+        System.out.println(str + 10);
+    }
+}
+//Convert a double primitive value into a Double object using both autoboxing and the valueOf() method.
+public class demo {
+    public static void main(String[] args) {
+        double a = 10.10;
+        Double b=a; // Autoboxing
+        Double c = Double.valueOf(a); // Converted using valueOf() Method
+        System.out.println(b.getClass().getName());
+        System.out.println(c.getClass().getName());
+    }
+}
+// Check whether a given character is a digit or a letter using the Character wrapper class methods.
+public class demo {
+    public static void main(String[] args) {
+        char ch = '1';
+        if (Character.isDigit(ch)) 
+            System.out.print("Is Digit");
+        else if(Character.isLetter(ch))    
+            System.out.println("Its Alphabhets");
+        else
+            System.out.println("Not Charecter also not digit");   
+    }
+}
+// Given a string "true", convert it to a boolean using the Boolean wrapper
+// class. Print the result and check if it's true.
+public class demo {
+
+    public static void main(String[] args) {
+        String str = "true";
+        boolean b = Boolean.valueOf(str);
+        System.out.println(b);
+    }
+}
+//Write a program to compare two Integer objects and print which one is larger using conditional statements.
+public class demo {
+
+    public static void main(String[] args) {
+        Integer a = 10;
+        Integer b=10;
+        if (a>b) {
+            System.out.println("A is Greater");
+        }
+        else if(a==b){
+            System.out.println("Both Are Equals");
+        }
+        else
+         System.out.println("B is Greater");
+    }
+}
+
+//Demonstrate auto-boxing and auto-unboxing using any primitive type and its corresponding wrapper class.
+
+public class demo {
+
+    public static void main(String[] args) {
+        int a = 10;
+        Integer b = a; // Autoboxing
+        int c = b.intValue(); // auto-unboxing
+        System.out.println(b.getClass().getName());
+        System.out.println(c);
+    }
+}
+
+//Convert a char to a Character object and check if it is an uppercase letter using the isUpperCase() method.
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Chrecter's ");
+        char a=sc.next().charAt(0);
+        Character b=a;
+        String s = b.toString();
+        String str = s.toUpperCase();
+        if (s.equals(str)) 
+            System.out.println("UpperCase");
+        else
+            System.out.println("Not UpperCase");        
+    }
+}
+//Take a float number and convert it into a Float object. Print its int value using intValue() method.
+public class demo {
+    public static void main(String[] args) {
+        float fl = 20.25f;
+        Float f = fl;
+        int a = f.intValue();
+        System.out.println(a);
+    }
+}
+
+//Write a program that takes 3 strings (e.g., "100", "200", "300"),
+// converts them to integers using Integer.parseInt(), and prints their sum.
+public class demo {
+    public static void main(String[] args) {
+        String str = "100,200,300";
+        String s[] = str.split( ",");
+        for(String e: s){
+            int val=Integer.parseInt(e);
+            System.out.println(val);
+        }
+    }
+}
+
+//Check if a given character is a whitespace or not using Character.isWhitespace() method.
+public class demo {
+    public static void main(String[] args) {
+        Character ch  = ' ';
+        System.out.print(Character.isWhitespace(ch));
+    }
+}
+
+// Use the toString() method of a wrapper class to convert a number into a
+// string and show that it's now a string by concatenating with another string.
+
+public class demo {
+    public static void main(String[] args) {
+        int a =100;
+        Integer b =a;
+        String str = b.toString();
+        String s = Integer.toString(a);
+        System.out.println(str+s+101);
+    }
+}
+//Demonstrate the difference between parseInt() and valueOf() using Integer wrapper class
+public  class demo {
+    public static void main(String[] args) {
+       String s = "100";
+       int a = Integer.parseInt(s); // retrurn value as primitive datatype 
+       Integer b = Integer.valueOf(s); //return value as refrence/object/class
+       System.out.println(s);
+    }
+}
+
+//Create a program to display the maximum and minimum values of Integer, Double, and Byte using their wrapper class constants.
+public class demo {
+    public static void main(String[] args) {
+        float f = Float.MAX_VALUE;
+        int i = Integer.MAX_VALUE;
+        double d = Double.MAX_VALUE;
+
+        float fl = Float.MIN_VALUE;
+        int in = Integer.MIN_VALUE;
+        double dou = Double.MIN_VALUE;
+        System.out.println("MAX_VALUES: "+f+" "+i+" "+d);
+        System.out.println("MIN_VALUES: "+fl+" "+in+" "+dou);
+    }
+}
+// Take a numeric string input from the user (like "123.45"), convert it to a
+// Double, multiply it by 2, and print the result.
+
+public class demo {
+    public static void main(String[] args) {
+        String str = "123.45";
+        Double dou= Double.valueOf(str);
+        System.out.println(dou*2);
+    }
+}
+// Check whether a given string is a palindrome by ignoring case and whitespace.
+// Use StringBuffer to reverse the string.
+
+public class demo {
+    public static void main(String[] args) {
+        String s = "A man a plan a canal Panama";
+        s = s.toLowerCase();
+        s = s.replace(" ", "");
+
+        // -- Check Palindrome Or Not --
+        int l = s.length()-1;
+        boolean flag = true;
+        for (int i = 0; i < s.length()/2; i++,l--) {
+            if (s.charAt(i) != s.charAt(l)) {
+                flag= false;
+            }
+        }
+        if(flag)
+            System.out.println(" --- Palindrome --- ");
+        else
+            System.out.println(" --- Not Palindrome --- ");
+
+    }
+}
+//Write a program that takes two strings and inserts the second string into the middle of the first one using StringBuilder.
+public class demo {
+    public static StringBuilder fun(String add) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < add.length(); i++) {
+            sb.append(add.charAt(i));
+        }
+        return sb;
+    }
+
+    public static void main(String[] args) {
+        String s = "HelloWorld";
+        String add = "Java";
+        // -- Using StringBuilder --
+        // StringBuilder sb = new StringBuilder(s);
+        // sb.insert(s.length()/2, add);
+        // System.out.println(sb);
+
+        // -- Manully add String in Specific Index
+        StringBuilder sb = new StringBuilder();
+        int mid = s.length() / 2;
+        for (int i = 0; i < s.length(); i++) {
+            if (mid == i)
+                sb.append(fun(add));
+            sb.append(s.charAt(i));
+        }
+        System.out.println(sb);
+
+        // -- Using String Methood --
+        // int mid = s.length()/2;
+        // String str = s.substring(0,mid) +add + s.substring(mid, s.length());
+        // System.out.println(str);
+    }
+}
+//   Remove Duplicate Characters from String Using StringBuffer
+public class demo {
+    public static void main(String[] args) {
+        String str = "Priogramming";
+        StringBuilder sb = new StringBuilder(str);  
+        StringBuilder sbb = new StringBuilder();// remove Duplicate Charecter
+        StringBuilder dsb = new StringBuilder(); // Store Duplicate Charecter
+        for (int i = 0; i < sb.length(); i++) {
+            boolean flag = true;
+            char ch = sb.charAt(i);
+            for (int j = i+1; j < sb.length()-1; j++) {
+                if (ch == sb.charAt(j)){
+                    flag = false;   
+                    break;
+                }          
+            }
+            if (flag) {
+                sbb.append(ch); 
+            }
+            else
+                    dsb.append(ch); 
+        }
+        System.out.println("Removed Duplicates:   "+sbb);
+        System.out.println("Duplicate String:   "+dsb);
+    }
+}
+// Without using any loop constructs, reverse a string using StringBuilder or StringBuffer
+public class demo {
+    public static void main(String[] args) {
+      StringBuilder sb = new StringBuilder("String");
+      String s = (sb.reverse()).toString();
+      System.out.println(s);
+    }
+}
+package Demo;
+
+import java.util.*;
+public class Demo {
+	public static String fun(String s, char ch) {
+
+			int count=0;
+			for(int j=0;j<s.length();j++) {
+				if(ch==s.charAt(j))
+					count++;
+			}
+			String st = ch+""+count;
+			return st;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "abbabc";
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i=0;i<s.length();i++) {
+			char ch = s.charAt(i);	
+			boolean flag = true;
+			for(int j=0;j<sb.length();j++) {
+				if(sb.charAt(j)==ch) {
+					flag= false;
+					break;
+				}
+			}
+			if(flag)
+				sb.append(fun(s,ch));
+			//flag = false;
+		}
+		System.out.println(sb);
+	}
+}
+
+*//  1. Reverse Words in a Sentence Using StringBuilder
+public class demo {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("java is powerfull");
+        // StringBuilder rev = new StringBuilder();
+        // rev = sb.reverse(); // Reversed StringBuilder Using InBild Method
+        // System.out.println(rev);
+        sb.append(" ");
+        String s = sb.toString(); // Coverted into String
+        // String as[] = s.split(" "); // Convert into Array
+
+        // --- Manully Split the String ---
+        int count = 1;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ' && s.charAt(i - 1) != ' ') {
+                count++;
+            }
+        }
+        String as[] = new String[count];
+        String empty = "";
+        int k = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch != 32) {
+                empty += ch;
+            } else {
+                as[k] = empty;
+                empty = "";
+                k++;
+            }
+        }
+        for (int i = 0; i < as.length - 1; i++)
+            System.out.println(as[i]);
+
+        // ------ Reversed String Manully -----
+        StringBuilder sbb = new StringBuilder();
+        for (int i = 0; i < as.length; i++) {
+            for (int j = as[i].length() - 1; j >= 0; j--) {
+                sbb.append(as[i].charAt(j));
+            }
+            sbb.append(" ");
+        }
+        System.out.println(sbb);
+    }
+}
+// Check if two strings are anagrams of each other using only StringBuilder methods (no arrays or HashMaps allowed).
+
+package Demo;
+import java.util.*;
+public class Demo {	
+	public static void main(String[] args) {
+		String str = "agcdt";
+		String s = "tadgc";
+		
+		boolean flag = true;
+		for(int i=0;i<str.length();i++) {
+			String st = Character.toString(str.charAt(i));
+			if(s.contains(st)) {
+				s = s.replace(st, "");
+			}else {
+				flag = false;
+				break;
+			}
+		}
+		if(flag && s.length() == 0)
+			System.out.println("Anagram String");
+		else
+			System.out.println("Not Anagram String");
+	}
+}
+//Rotate a string to the right by k positions using StringBuffer.
+//Input: "abcdef", k = 2 → Output: "efabcd"
+package Demo;
+import java.util.*;
+public class Demo{
+	public static void main(String x[]) {
+		String str = "abcdef";
+		int k = 13;
+//		StringBuilder sb = new StringBuilder(str);
+		
+		if(k>str.length())
+			k = k%str.length();
+		else if(k<0)
+			k = k+str.length();
+		String result = str.substring(0, str.length()-k);
+		String result1 = str.substring(str.length()-k, str.length());
+		System.out.println(result1 +""+result);
+
+		
+		//String rotate = str.substring(str.length()-k,k); 
+	}
+}
+// You are given an array of lowercase strings. Group and print all words that share the same set of characters,
+// regardless of their order or frequency.
+// Input: ["may", "student", "students", "dog", "god", "cat", "act", "yam"]
+// Output :
+// ["may", "yam"]
+// ["student", "students"]
+// ["dog", "god"]
+// ["cat", "act"]
+
+public class temp {
+    public static void main(String[] args) {
+        String str[] = { "may", "student", "students", "dog", "god", "cat", "act", "yam" };
+        boolean flag=false;
+        String str_i="",str_j="";
+
+        for (int i = 0; i < str.length-1; i++) {
+             str_i = str[i]; //student
+            for (int j = i + 1; j < str.length; j++) {
+                 str_j = str[j]; //students
+                flag = true;
+                
+                    for (int j2 = 0; j2 < str_j.length(); j2++) {
+                        char ch = str_j.charAt(j2); //
+                        if (!str_i.contains(String.valueOf(ch))) {
+                            flag = false;
+                            break;
+                        }
+                    }   
+                 if(flag) System.out.println("["+str_i+", "+str_j+"]");             
+            }
+            
+        }
+    }
+}
+
